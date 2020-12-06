@@ -18,7 +18,7 @@ const isPassword =await bcrypt.compare(req.body.password ,isUser.password)
 if(!isPassword) return res.status(400).send("email or password is not valid")
 
 const token =isUser.getToken()
-res.header("x-auth",token).send(true)
+res.header("x-auth",token).send(token)
 })
 
 
